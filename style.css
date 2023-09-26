@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(
+    75deg,
+    #ede7f3 0%,
+    #e3eeff 99%,
+    #e3eeff 100%
+  );
+  font-family: "Poppins", sans-serif;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  min-width: 45vw;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 1em;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(25, 25, 25, 0.25);
+}
+
+header {
+  font-size: 1rem;
+  color: #2c1138;
+}
+
+header,
+form {
+  min-height: 15vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1.5rem;
+  align-items: center;
+}
+
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border: none;
+}
+
+form input {
+  border-bottom: 0.2rem solid #d3bafa;
+}
+
+form button {
+  color: #d3bafa;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background: #d3bafa;
+  color: white;
+}
+
+.date {
+  font-weight: 500;
+  color: #ccaefc;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 60%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  color: #2c1138;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.todo li {
+  flex: 1;
+}
+
+.trash-btn,
+.complete-btn {
+  background: #d3bafa;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+  color: #2c1138;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+.task-tools {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6rem;
+  padding: 0.5rem;
+}
+.task-count {
+  color: #8a9ca5;
+  font-size: 14px;
+}
+.task-filter {
+  border: 0;
+  padding: 3px 8px;
+  background: 0;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  font-family: var(--font);
+  color: #8a9ca5;
+  border-radius: 20px;
+}
+.task-filter.is-active {
+  background-color: #7996a5;
+  color: #fff;
+}
