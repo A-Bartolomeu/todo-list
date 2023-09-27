@@ -157,6 +157,11 @@ form button:hover {
   border-radius: 20px;
   transition: all 0.5s ease;
 }
+.task-filter button:hover {
+  background-color: #d3bafa;
+  color: #fff;
+  padding: 0rem 0.5rem;
+}
 .task-filter.is-active {
   background-color: #d3bafa;
   color: #fff;
