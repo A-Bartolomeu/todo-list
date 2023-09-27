@@ -21,32 +21,48 @@
   </head>
   <body>
     <div class="container">
-      <header>
-        <h1 class="date"></h1>
-
-        <div class="task-tools">
-          <div class="task-count">5 tasks</div>
-          <div name="todos" class="task-filter">
-            <button id="all" class="task-filter" value="all">All</button
-            ><button id="active" class="task-filter" value="uncompleted">
-              Active</button
-            ><button id="completed" class="task-filter" value="completed">
-              Completed
-            </button>
+      <div class="app-wrapper">
+        <header>
+          <div class="dateSection">
+            <div class="day" id="day"></div>
+            <div class="center">
+              <div class="month" id="month"></div>
+              <div class="year" id="year"></div>
+            </div>
+            <div class="weekday" id="weekday"></div>
           </div>
+          <div class="task-tools">
+            <div class="task-count"></div>
+            <div name="todos" class="task-filter">
+              <button id="all" class="task-filter" value="all">All</button
+              ><button id="active" class="task-filter" value="uncompleted">
+                Active</button
+              ><button id="completed" class="task-filter" value="completed">
+                Completed
+              </button>
+            </div>
+          </div>
+        </header>
+        <form>
+          <input type="text" class="todo-input" placeholder="Add new to-do" />
+          <button class="todo-button" type="submit">
+            <i class="fa-solid fa-circle-plus"></i>
+          </button>
+        </form>
+        <div class="todo-container">
+          <ul class="todo-list"></ul>
         </div>
-      </header>
-
-      <div class="todo-container">
-        <ul class="todo-list"></ul>
       </div>
-      <form>
-        <input type="text" class="todo-input" />
-        <button class="todo-button" type="submit">
-          <i class="fa-solid fa-circle-plus"></i>
-        </button>
-      </form>
+      <footer class="footer-coder">
+        <a
+          href="https://github.com/ABartolomeu-coder/weather-2.0"
+          target="_blank"
+          >Open-source code</a
+        >
+        by ABartolomeu
+      </footer>
     </div>
+
     <script src="app.js"></script>
   </body>
 </html>

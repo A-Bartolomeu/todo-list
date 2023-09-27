@@ -18,9 +18,11 @@ body {
   justify-content: center;
 }
 .container {
-  min-width: 45vw;
+  min-width: 40vw;
   flex-direction: column;
   justify-content: space-between;
+}
+.app-wrapper {
   border-radius: 1em;
   background: #fff;
   overflow: hidden;
@@ -30,6 +32,7 @@ body {
 header {
   font-size: 1rem;
   color: #2c1138;
+  padding: 1.5rem 2rem 0.2rem 2rem;
 }
 
 header,
@@ -38,36 +41,41 @@ form {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 1.5rem;
-  align-items: center;
+}
+
+form {
+  flex-direction: initial;
+  padding: 0rem 2rem 0rem 2rem;
+  min-height: 3rem;
 }
 
 form input,
 form button {
-  padding: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   border: none;
+  padding-left: 0.5rem;
 }
 
 form input {
-  border-bottom: 0.2rem solid #d3bafa;
+  border-bottom: 0.1rem solid #d3bafa;
+  min-width: 95%;
 }
 
 form button {
   color: #d3bafa;
-  background: white;
+  background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: 1.5rem;
 }
 
 form button:hover {
-  background: #d3bafa;
-  color: white;
+  transform: scale(1.5);
 }
 
-.date {
-  font-weight: 500;
-  color: #ccaefc;
+::placeholder {
+  color: #8a9ca5;
+  opacity: 0.5;
 }
 
 .todo-container {
@@ -77,12 +85,13 @@ form button:hover {
 }
 
 .todo-list {
-  min-width: 60%;
+  min-width: 100%;
   list-style: none;
+  padding: 1.5rem 2rem;
 }
 
 .todo {
-  margin: 0.5rem;
+  margin: 0.5rem 0rem 0.5rem 0rem;
   color: #2c1138;
   font-size: 1rem;
   display: flex;
@@ -106,7 +115,6 @@ form button:hover {
 }
 
 .todo-item {
-  padding: 0rem 0.5rem;
   color: #2c1138;
 }
 
@@ -131,7 +139,6 @@ form button:hover {
   flex-wrap: wrap;
   align-items: baseline;
   gap: 6rem;
-  padding: 0.5rem;
 }
 .task-count {
   color: #8a9ca5;
@@ -139,7 +146,8 @@ form button:hover {
 }
 .task-filter {
   border: 0;
-  padding: 3px 8px;
+  display: flex;
+  gap: 1.5rem;
   background: 0;
   font-size: 14px;
   line-height: 1;
@@ -147,8 +155,51 @@ form button:hover {
   font-family: var(--font);
   color: #8a9ca5;
   border-radius: 20px;
+  transition: all 0.5s ease;
 }
 .task-filter.is-active {
-  background-color: #7996a5;
+  background-color: #d3bafa;
   color: #fff;
+  padding: 0rem 0.5rem;
+}
+
+.dateSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #d3bafa;
+  font-size: 1rem;
+}
+.dateSection .day {
+  flex: 0;
+  font-size: 3rem;
+}
+.dateSection .center {
+  flex: 1;
+  padding-left: 0.5rem;
+}
+.dateSection .center .month {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.dateSection .weekday {
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.footer-coder {
+  font-weight: 400;
+  color: #2c1138;
+  font-size: 0.5rem;
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+.footer-coder a {
+  text-decoration: none;
+  color: #d3bafa;
+}
+.footer-coder a:hover {
+  text-decoration: underline;
 }

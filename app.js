@@ -3,7 +3,11 @@ const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".task-filter");
-const formatDate = document.querySelector(".date");
+const formatDay = document.querySelector("#day");
+const formatMonth = document.querySelector("#month");
+const formatYear = document.querySelector("#year");
+const formatWeek = document.querySelector("#weekday");
+const todoTotal = document.querySelector(".task-count");
 
 //Event Listeners
 document.addEventListener("DOMContentLoaded", getTodos);
@@ -15,24 +19,35 @@ filterOption.addEventListener("click", filterTodo);
 const now = new Date();
 let day = now.getDate();
 let year = now.getFullYear();
-let weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let weekDays = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 let weekDay = weekDays[now.getDay()];
 let months = [
-  "January",
-  "February",
-  "March",
-  "April",
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
   "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
 ];
 let month = months[now.getMonth()];
-formatDate.innerHTML = `${weekDay}, ${day} ${month} ${year}`;
+formatDay.innerHTML = `${day}`;
+formatMonth.innerHTML = `${month}`;
+formatYear.innerHTML = `${year}`;
+formatWeek.innerHTML = `${weekDay}`;
 
 //Functions
 function addTodo(event) {
@@ -105,11 +120,17 @@ function filterTodo(e) {
           active.classList.remove("is-active");
         } else {
           todo.style.display = "none";
+          all.classList.remove("is-active");
+          completed.classList.add("is-active");
+          active.classList.remove("is-active");
         }
         break;
       case "uncompleted":
         if (!todo.classList.contains("completed")) {
           todo.style.display = "flex";
+          all.classList.remove("is-active");
+          completed.classList.remove("is-active");
+          active.classList.add("is-active");
         } else {
           todo.style.display = "none";
           all.classList.remove("is-active");
@@ -132,6 +153,8 @@ function saveLocalTodos(todo) {
   }
   todos.push(todo);
   localStorage.setItem("todos", JSON.stringify(todos));
+  const todoCount = todos.length;
+  todoTotal.innerHTML = `${todoCount} tasks`;
 }
 function getTodos() {
   //Check (Do I already have thing in ther?)
@@ -162,6 +185,8 @@ function getTodos() {
     todoDiv.appendChild(trashButton);
     //Append to list
     todoList.appendChild(todoDiv);
+    const todoCount = todos.length;
+    todoTotal.innerHTML = `${todoCount} tasks`;
   });
 }
 function removeLocalTodos(todo) {
@@ -175,4 +200,6 @@ function removeLocalTodos(todo) {
   const todoIndex = todo.children[0].innerText;
   todos.splice(todos.indexOf(todoIndex), 1);
   localStorage.setItem("todos", JSON.stringify(todos));
+  const todoCount = todos.length;
+  todoTotal.innerHTML = `${todoCount} tasks`;
 }
