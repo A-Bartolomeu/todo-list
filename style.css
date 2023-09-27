@@ -61,6 +61,14 @@ form input {
   min-width: 95%;
 }
 
+form input:focus-visible {
+  border-color: #d3bafa;
+  color: #8a9ca5;
+}
+form input:focus {
+  border-color: #bd98fa;
+  outline: none;
+}
 form button {
   color: #d3bafa;
   background: transparent;
@@ -71,6 +79,7 @@ form button {
 
 form button:hover {
   transform: scale(1.5);
+  color: #bd98fa;
 }
 
 ::placeholder {
