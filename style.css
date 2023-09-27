@@ -208,3 +208,17 @@ form button:hover {
 .footer-coder a:hover {
   text-decoration: underline;
 }
+
+@media (min-width: 250px) {
+  body {
+    margin-top: 3rem;
+  }
+
+  .container {
+    max-width: 90vw;
+  }
+
+  .task-tools {
+    gap: 1.5rem;
+  }
+}
